@@ -8,14 +8,15 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController, UITableViewDataSource {
+class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let photosTableView = UITableView()
+    let webServiceShared = WebServiceManager.webServiceManagerSharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Assignment"
-        
+        getJsonDataFromApi()
         self.view.addSubview(photosTableView)
         photosTableView.translatesAutoresizingMaskIntoConstraints = false
         setTableViewLayout()
@@ -31,7 +32,19 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
         photosTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
+    func getJsonDataFromApi() {
+        webServiceShared.getJsonData { (error, jsonResponseData) in
+            guard error == nil else{
+                print(error!)
+                return
+            }
+            print(jsonResponseData)
+        }
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -39,7 +52,9 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath)
         cell.textLabel?.text = "Test"
+        cell.detailTextLabel?.text = "Detailed test"
         return cell
     }
+    
 }
 

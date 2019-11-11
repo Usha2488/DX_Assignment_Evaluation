@@ -11,6 +11,7 @@
 		4A61E02A2379A48B007C5A5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A61E0292379A48B007C5A5D /* Assets.xcassets */; };
 		4A61E02D2379A48B007C5A5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A61E02B2379A48B007C5A5D /* LaunchScreen.storyboard */; };
 		4A61E0352379A87E007C5A5D /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61E0342379A87E007C5A5D /* PhotosViewController.swift */; };
+		4A61E0392379C00C007C5A5D /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61E0382379C00C007C5A5D /* WebServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		4A61E02C2379A48B007C5A5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A61E02E2379A48B007C5A5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A61E0342379A87E007C5A5D /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		4A61E0382379C00C007C5A5D /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				4A61E02B2379A48B007C5A5D /* LaunchScreen.storyboard */,
 				4A61E02E2379A48B007C5A5D /* Info.plist */,
 				4A61E0342379A87E007C5A5D /* PhotosViewController.swift */,
+				4A61E0382379C00C007C5A5D /* WebServiceManager.swift */,
 			);
 			path = DX_Assignment;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			files = (
 				4A61E0232379A48A007C5A5D /* AppDelegate.swift in Sources */,
 				4A61E0352379A87E007C5A5D /* PhotosViewController.swift in Sources */,
+				4A61E0392379C00C007C5A5D /* WebServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
