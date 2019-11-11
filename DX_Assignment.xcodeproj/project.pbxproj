@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		4A61E0232379A48A007C5A5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61E0222379A48A007C5A5D /* AppDelegate.swift */; };
-		4A61E0252379A48A007C5A5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61E0242379A48A007C5A5D /* ViewController.swift */; };
-		4A61E0282379A48A007C5A5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A61E0262379A48A007C5A5D /* Main.storyboard */; };
 		4A61E02A2379A48B007C5A5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A61E0292379A48B007C5A5D /* Assets.xcassets */; };
 		4A61E02D2379A48B007C5A5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A61E02B2379A48B007C5A5D /* LaunchScreen.storyboard */; };
+		4A61E0352379A87E007C5A5D /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61E0342379A87E007C5A5D /* PhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A61E01F2379A48A007C5A5D /* DX_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DX_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A61E0222379A48A007C5A5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A61E0242379A48A007C5A5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4A61E0272379A48A007C5A5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A61E0292379A48B007C5A5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A61E02C2379A48B007C5A5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A61E02E2379A48B007C5A5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A61E0342379A87E007C5A5D /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +53,10 @@
 			isa = PBXGroup;
 			children = (
 				4A61E0222379A48A007C5A5D /* AppDelegate.swift */,
-				4A61E0242379A48A007C5A5D /* ViewController.swift */,
-				4A61E0262379A48A007C5A5D /* Main.storyboard */,
 				4A61E0292379A48B007C5A5D /* Assets.xcassets */,
 				4A61E02B2379A48B007C5A5D /* LaunchScreen.storyboard */,
 				4A61E02E2379A48B007C5A5D /* Info.plist */,
+				4A61E0342379A87E007C5A5D /* PhotosViewController.swift */,
 			);
 			path = DX_Assignment;
 			sourceTree = "<group>";
@@ -124,7 +121,6 @@
 			files = (
 				4A61E02D2379A48B007C5A5D /* LaunchScreen.storyboard in Resources */,
 				4A61E02A2379A48B007C5A5D /* Assets.xcassets in Resources */,
-				4A61E0282379A48A007C5A5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +131,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A61E0252379A48A007C5A5D /* ViewController.swift in Sources */,
 				4A61E0232379A48A007C5A5D /* AppDelegate.swift in Sources */,
+				4A61E0352379A87E007C5A5D /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4A61E0262379A48A007C5A5D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A61E0272379A48A007C5A5D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4A61E02B2379A48B007C5A5D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,6 +273,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DX_Assignment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +293,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DX_Assignment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
