@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0E2982237AF5310012A770 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0E2981237AF5310012A770 /* PhotosTableViewCell.swift */; };
 		4A61E0232379A48A007C5A5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A61E0222379A48A007C5A5D /* AppDelegate.swift */; };
 		4A61E02A2379A48B007C5A5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A61E0292379A48B007C5A5D /* Assets.xcassets */; };
 		4A61E02D2379A48B007C5A5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A61E02B2379A48B007C5A5D /* LaunchScreen.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A0E2981237AF5310012A770 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		4A61E01F2379A48A007C5A5D /* DX_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DX_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A61E0222379A48A007C5A5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A61E0292379A48B007C5A5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				4A61E02E2379A48B007C5A5D /* Info.plist */,
 				4A61E0342379A87E007C5A5D /* PhotosViewController.swift */,
 				4A61E0382379C00C007C5A5D /* WebServiceManager.swift */,
+				4A0E2981237AF5310012A770 /* PhotosTableViewCell.swift */,
 			);
 			path = DX_Assignment;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0E2982237AF5310012A770 /* PhotosTableViewCell.swift in Sources */,
 				4A61E0232379A48A007C5A5D /* AppDelegate.swift in Sources */,
 				4A61E0352379A87E007C5A5D /* PhotosViewController.swift in Sources */,
 				4A61E0392379C00C007C5A5D /* WebServiceManager.swift in Sources */,
