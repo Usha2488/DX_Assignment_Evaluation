@@ -40,5 +40,26 @@ class WebServiceManager: NSObject {
         }
         task.resume()
     }
+  
+  func getImageFromUrl(urlString: String, completionHandler: @escaping(_ error: Error?, _ dataModel: Data?)-> Void) {
+    let requestUrl = URL(string: urlString)!
+    
+    let dataRequest = URLRequest(url: requestUrl)
+    
+    let session = URLSession.shared
+    let task = session.dataTask(with: dataRequest) { (data, response, error) in
+      guard error == nil else {
+        completionHandler(error, nil)
+        return
+      }
+      guard let responseData = data else {
+        completionHandler(error, nil)
+        return
+      }
+      completionHandler(nil, responseData)
+      return
+    }
+    task.resume()
+  }
     
 }
