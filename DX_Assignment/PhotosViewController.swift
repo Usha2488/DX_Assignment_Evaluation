@@ -19,8 +19,8 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         getJsonDataFromApi()
+        
         self.view.addSubview(photosTableView)
-        photosTableView.translatesAutoresizingMaskIntoConstraints = false
         setTableViewLayout()
         
         photosTableView.delegate = self
@@ -29,6 +29,8 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func setTableViewLayout() {
+        photosTableView.translatesAutoresizingMaskIntoConstraints = false
+        
         photosTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         photosTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         photosTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
@@ -55,7 +57,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
             self.photosTableView.reloadData()
         }
     }
-   
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -72,12 +73,10 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         if !(rowDictionary["title"] is NSNull){
             cell.titleLabel.text = rowDictionary["title"] as? String
         }
-        
         if !(rowDictionary["description"] is NSNull) {
             let detailString = rowDictionary["description"] as! String
             cell.descriptionLabel.text = detailString
         }
-        
         if !(rowDictionary["imageHref"] is NSNull) {
             webServiceShared.getImageFromUrl(urlString: (rowDictionary["imageHref"] as! String)) { (error, imageData) in
                 guard error == nil else {
@@ -104,7 +103,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         }
         return cell
     }
-    
     
 }
 
