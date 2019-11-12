@@ -31,7 +31,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     self.navigationItem.title = screenTitle
-    
   }
   
   func setTableViewLayout() {
@@ -61,40 +60,56 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
   }
   
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+  func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableView.automaticDimension
   }
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return rowsArray.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath)
+    let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "photoCell")
+ 
     let rowDictionary = rowsArray[indexPath.row]
-    if rowDictionary["title"] != nil{
+    if !(rowDictionary["title"] is NSNull){
       cell.textLabel?.text = rowDictionary["title"] as? String
     }
     
-    if rowDictionary["description"] != nil  {
-      cell.detailTextLabel?.text = rowDictionary["description"] as? String
+    if !(rowDictionary["description"] is NSNull) {
+      cell.detailTextLabel?.lineBreakMode = .byWordWrapping
+      cell.detailTextLabel?.numberOfLines = 0
+      let detailString = rowDictionary["description"] as! String
+      cell.detailTextLabel?.text = detailString
     }
     
     if !(rowDictionary["imageHref"] is NSNull) {
       webServiceShared.getImageFromUrl(urlString: (rowDictionary["imageHref"] as! String)) { (error, imageData) in
-        guard error == nil else
-        {
+        guard error == nil else {
           print(error!)
           return
         }
         DispatchQueue.main.async {
-          cell.imageView?.image = UIImage.init(data: imageData!)
+          if let rowImage = UIImage.init(data: imageData!){
+            cell.imageView?.image = rowImage
+          } else {
+            print("Image data conversion error")
+            cell.imageView?.image = UIImage(named: "no-image")
+          }
           cell.setNeedsLayout()
         }
       }
     }
+    else
+    {
+      DispatchQueue.main.async {
+        cell.imageView?.image = UIImage(named: "no-image")
+        cell.setNeedsLayout()
+      }
+    }
     return cell
   }
+  
   
 }
 
