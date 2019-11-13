@@ -12,8 +12,10 @@ class WebServiceManager: NSObject {
     
     static let webServiceManagerSharedInstance = WebServiceManager()
     
+    
+    //Method to get data from API
     func getJsonData(completionHandler: @escaping(_ error: Error?, _ dataModel: [String:Any])-> Void) {
-        let requestUrl = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")!
+        let requestUrl = URL(string: factsURL)!
         
         var dataRequest = URLRequest(url: requestUrl)
         dataRequest.httpMethod = "GET"
@@ -40,26 +42,28 @@ class WebServiceManager: NSObject {
         }
         task.resume()
     }
-  
-  func getImageFromUrl(urlString: String, completionHandler: @escaping(_ error: Error?, _ dataModel: Data?)-> Void) {
-    let requestUrl = URL(string: urlString)!
     
-    let dataRequest = URLRequest(url: requestUrl)
     
-    let session = URLSession.shared
-    let task = session.dataTask(with: dataRequest) { (data, response, error) in
-      guard error == nil else {
-        completionHandler(error, nil)
-        return
-      }
-      guard let responseData = data else {
-        completionHandler(error, nil)
-        return
-      }
-      completionHandler(nil, responseData)
-      return
+    //Method to get image from image URL present in the JSON Response
+    func getImageFromUrl(urlString: String, completionHandler: @escaping(_ error: Error?, _ dataModel: Data?)-> Void) {
+        let requestUrl = URL(string: urlString)!
+        
+        let dataRequest = URLRequest(url: requestUrl)
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: dataRequest) { (data, response, error) in
+            guard error == nil else {
+                completionHandler(error, nil)
+                return
+            }
+            guard let responseData = data else {
+                completionHandler(error, nil)
+                return
+            }
+            completionHandler(nil, responseData)
+            return
+        }
+        task.resume()
     }
-    task.resume()
-  }
     
 }
